@@ -1,0 +1,69 @@
+\documentclass[oneside, 11pt, notitlepage, a4paper, numbers=noenddot]{scrartcl}
+
+\usepackage{thisemi}
+\usepackage[pdftex]{graphicx}
+
+\title {Analyse von PST-Dateien}
+\author{Alexander Pilz}
+\date  {Sommersemester 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Einleitung}
+\input{Sections/01_00_Einleitung.tex}
+\label{Einleitung}
+
+\section{Allgemeines}
+\input{Sections/01_01_Allgemeines.tex}
+\label{Allgemeines}
+
+\section{PST-Datei}
+\input{Sections/02_00_PST_File.tex}
+\label{PST-Datei}
+
+\section{Aufbau einer PST-Datei}
+\input{Sections/02_01_Aufbau_PST_File.tex}
+\label{Aufbau einer PST-Datei}
+
+\section{Sicherheitsprobleme mit PST-Dateien}
+\input{Sections/02_02_Sicherheitsprobleme.tex}
+\label{Sicherheitsprobleme mit PST-Dateien}
+
+\section{Schritte bei der Analyse der PST-Datei}
+\input{Sections/03_00_Analyse.tex}
+\label{Schritte bei der Analyse der PST-Datei}
+
+\subsection{Datensatz}
+\input{Sections/03_01_Datensatz.tex}
+\label{Datensatz}
+
+\subsection{Parsing der PST-Datei}
+\input{Sections/03_02_Parsing_PST_File.tex}
+\label{Parsing der PST-Datei}
+
+\subsection{Senderanalyse}
+\input{Sections/03_03_Senderanalyse.tex}
+\label{Senderanalyse}
+
+\subsection{Zeitliche Analyse}
+\input{Sections/03_04_Zeitliche_Analyse.tex}
+\label{Zeitliche Analyse}
+
+\subsection{Analyse von Spam-Wörtern}
+\input{Sections/03_05_Wortanalyse.tex}
+\label{Analyse von Spam-Wörtern}
+
+\section{Ergebnisse}
+\input{Sections/04_00_Ergebnisse.tex}
+\label{Ergebnisse}
+
+\section{Fazit}
+\input{Sections/06_Fazit.tex}
+\label{Fazit}
+
+\bibliographystyle{plain}
+\bibliography{literaturverzeichnis/literaturverzeichnis}
+
+\end{document}
