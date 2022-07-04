@@ -1,42 +1,27 @@
 \noindent Die nächste Analyse bezieht sich auf das zeitliche Eintreffen von Emails. Durch das Parsen der .pst-Datei lag die Eigenschaft \glqq{}datetime\grqq, welche das Datum und die Zeit der empfangenen E-Mail darstellt in dem Format vor, dass in Abbildung \ref{fig:datetime} zu sehen ist. Mithilfe des Python Codes aus Abbildung \ref{fig:emailsdatetime} werden die Daten in die korrekte Zeitzone konvertiert, weil sie standardmäßig im UTC-Format gespeichert werden. Hierzu wird die Zeitzone erst als UTC deklariert und dann in die gewünschte Zeitzone umgewandelt. Im nachfolgenden Schritt werden die extrahierten Daten als Punktewolke, welche die Ankunftszeiten der E-Mails nach Datum darstellt, geplottet. Dazu werden zwei Spalten mit den Koordinaten der zu verfolgenden Punkte erstellt. Als letzter Schritt wird dann die Punktewolke erstellt. Dazu wurden die Python Bibliotheken \glqq{}matplotlib\grqq{} und \glqq{}seaborn\grqq{} verwendet. In dieser Seminararbeit wurde der vorhandene Datensatz vom Jahr 2020 bis Mitte 2022 analysiert. \smallskip
 
+
 \noindent Daraus entstand der Graph, der in Abbildung \ref{fig:auswertungzeitlich} abgebildet wird. Klar erkennbar ist hier die Häufung von empfangenen E-Mails zwischen 16 und 18 Uhr. Ebenso ist ab dem Jahr 2022 eine Häufung der Nachrichten im Bereich um 14 bis 15 Uhr erkennbar. Auffällig ist, das zwischen 22 Uhr und 5 Uhr fast keine E-Mails eingetroffen sind. Daraus lässt sich ableiten, dass tatsächlich fast nur Mails zu Zeiten gesendet werden, bei denen der Nutzer auch selbst aktiv ist. Die Punktewolke, die sich aus dem zweiten Datensatz ableiten lässt, ist in Abbildung \ref{fig:auswertungzeitlichmerged} zu sehen. Hier ist anzumerken, dass die zeitliche Verteilung leider wenig aussagekräftig ist, da unter Berücksichtigung aller empfangener E-Mails die hohe Anzahl an Benachrichtigungen von \glqq{}Twitch\grqq{} enthalten ist und diese zu jeder Tages- und Nachtzeit auftreten. Beim herausfiltern all dieser E-Mails waren keine besonderen zeitlichen Auffälligkeiten der anderen Mails erkennbar, da es dafür wiederum zu wenige über den betrachteten Zeitraum waren, wobei dieser sogar schon auf die erste Hälfte des Jahres 2022 eingeschränkt wurde. \smallskip
 
-\noindent Abschließend wurde noch eine Betrachtung aller E-Mails beider .pst-Dateien durchgeführt mit dem Augenmerk auf die jeweiligen Wochentage, an denen die E-Mails empfangen wurden. Dazu wurden die Eigenschaft \glqq{}datetime\grqq{}, welche Uhrzeit und Datum einer gesendeten Nachricht enthält genutzt, um mithilfe der Python Bibliothek datetime den jeweiligen Wochentag herauszufinden. Anschließend wurden die Ergebnisse geplottet (siehe Abbildung \ref{fig:plotweekdays}). Zu erkennen ist hierbei, dass es am Samstag und Sonntag weniger E-Mails wurden, was vermutlich daher kommt, dass die Empfänger von Spam-Mails dort Wochenende haben und ihre Endgeräte dementsprechend auch weniger nutzen, weil sie nicht Arbeiten müssen, oder andere Erledigungen tätigen. Dienstag und Freitag weisen die höchsten Stände an empfangenen E-Mails auf. Vermutlich ist Freitag einer der beliebtesten Tage für E-Mails, weil die Leute ins Wochenende starten wollen oder von der Woche erschöpft sind und somit unvorsichtiger gegenüber Spam-Mails oder unerwünschten Angeboten sind. Dies würde auch den Absendern dieser Mails in die Hände spielen und würde somit das Muster (wenn auch nicht sehr stark erkennbar) erklären.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.50\textwidth]{images/datetime.PNG}
-    \caption{E-Mail Eigenschaft datetime} 
-    \label{fig:datetime}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{images/Auswertung_Zeiten.PNG}
-    \caption{Python Code - Auswertung hinsichtlich der Empfangszeiten} 
-    \label{fig:emailsdatetime}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.75\textwidth]{images/plot.PNG}
     \caption{Zeitliche Verteilung der E-Mails - Datensatz mit 4102 E-Mails} 
     \label{fig:auswertungzeitlich}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.75\textwidth]{images/merged_plot.PNG}
     \caption{Zeitliche Verteilung der E-Mails - Datensatz mit 6692 E-Mails} 
     \label{fig:auswertungzeitlichmerged}
 \end{figure}
 
-\begin{figure}
+\noindent Abschließend wurde noch eine Betrachtung aller E-Mails beider .pst-Dateien durchgeführt mit dem Augenmerk auf die jeweiligen Wochentage, an denen die E-Mails empfangen wurden. Dazu wurden die Eigenschaft \glqq{}datetime\grqq{}, welche Uhrzeit und Datum einer gesendeten Nachricht enthält genutzt, um mithilfe der Python Bibliothek datetime den jeweiligen Wochentag herauszufinden. Anschließend wurden die Ergebnisse geplottet (siehe Abbildung \ref{fig:plotweekdays}). Zu erkennen ist hierbei, dass es am Samstag und Sonntag weniger E-Mails wurden, was vermutlich daher kommt, dass die Empfänger von Spam-Mails dort Wochenende haben und ihre Endgeräte dementsprechend auch weniger nutzen, weil sie nicht Arbeiten müssen, oder andere Erledigungen tätigen. Dienstag und Freitag weisen die höchsten Stände an empfangenen E-Mails auf. Vermutlich ist Freitag einer der beliebtesten Tage für E-Mails, weil die Leute ins Wochenende starten wollen oder von der Woche erschöpft sind und somit unvorsichtiger gegenüber Spam-Mails oder unerwünschten Angeboten sind. Dies würde auch den Absendern dieser Mails in die Hände spielen und würde somit das Muster (wenn auch nicht sehr stark erkennbar) erklären.
+
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=1\textwidth]{images/received_mails_per_weekday.PNG}
     \caption{Auftreten von E-Mails verteilt auf Wochentage} 
     \label{fig:plotweekdays}
 \end{figure}
-
-\newpage
